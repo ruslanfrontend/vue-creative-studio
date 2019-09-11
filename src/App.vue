@@ -39,7 +39,7 @@
     text-transform: uppercase;
   }
 
-  .active, a:hover {
+  .router-link-active, a:hover {
     color: #090909;
   }
 

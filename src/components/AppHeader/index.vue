@@ -5,12 +5,15 @@
     </div>
     <div id="menu">
       <ul>
-        <li><a class="active" href="#">HOME</a></li>
-        <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">PORTFOLIO</a></li>
-        <li><a href="#">SERVICES</a></li>
-        <li><a href="#">BLOG</a></li>
-        <li><a href="#">CONTACT US</a></li>
+        <li
+          v-for="(item, index) in menu"
+          :key="index"
+        >
+          <router-link
+            :to="item.link"
+            exact
+          >{{ item.text }}</router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -18,7 +21,36 @@
 
 <script>
 	export default {
-
+		data() {
+			return {
+				menu: [
+          {
+          	link: '/',
+            text: 'HOME'
+          },
+          {
+          	link: '/about',
+            text: 'ABOUT US'
+          },
+          {
+          	link: '/portfolio',
+            text: 'PORTFOLIO'
+          },
+          {
+          	link: '/services',
+            text: 'SERVICES'
+          },
+          {
+          	link: '/blog',
+            text: 'BLOG'
+          },
+          {
+          	link: '/contact',
+            text: 'CONTACT US'
+          }
+        ]
+      }
+    }
 	}
 </script>
 
